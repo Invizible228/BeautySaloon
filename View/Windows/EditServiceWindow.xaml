@@ -1,0 +1,40 @@
+﻿<Window x:Class="MainSaloon.View.Windows.EditServiceWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MainSaloon.View.Windows"
+        mc:Ignorable="d"
+        Loaded="PageLoaded" 
+        Title="EditServiceWindow"
+        Height="450" Width="800" DataContext="{Binding Mode=OneWay, RelativeSource={RelativeSource Self}}">
+    <Window.Resources>
+        <Style TargetType="TextBox">
+            <Setter Property="Width" Value="270"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Run Text="Название"/>
+            <TextBox x:Name="Title" />
+            <LineBreak/>
+            <Run Text="Цена"/>
+            <TextBox x:Name="Cost"/>
+            <LineBreak/>
+            <Run Text="Длительность(мин)"/>
+            <TextBox x:Name="Duration" MaxLength="3"/>
+            <LineBreak/>
+            <Run Text="Описание"/>
+            <TextBox x:Name="Description"/>
+            <LineBreak/>
+            <Run Text="Скидка"/>
+            <TextBox x:Name="Discount" MaxLength="2"/>
+            <LineBreak/>
+            <Image Source="{Binding MainService.MainImagePath}" Width="100"/>
+            <LineBreak/>
+            <Button Content="Изменить изображение" Width="300" Click="EditImage"/>
+            <Button Content="Изменить" Width="300" Click="Edit"/>
+
+        </TextBlock>
+    </Grid>
+</Window>
